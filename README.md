@@ -2,7 +2,7 @@
 
 ### 图标一览
 
-[cicons/icons-reference.html](http://ctofunds.github.io/cicons/dist/icons-reference.html)
+[dist/icons-reference.html](http://ctofunds.github.io/cicons/dist/icons-reference.html)
 
 ### 安装
 
@@ -18,7 +18,6 @@
 * 命名采用英文
 * 全部小写
 * 使用中划线连字符
-
 
 ### 怎样更新图标
 
