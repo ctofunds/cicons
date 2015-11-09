@@ -18,7 +18,7 @@ function cleanFonts(cb) {
 }
 
 function generateFonts(cb) {
-  gulp.src(['source/*.svg'])
+  gulp.src(['svg-source/*.svg'])
     .pipe(iconfont({
       fontName: fontName,
       formats: ['eot', 'svg', 'ttf', 'woff']
