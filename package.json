@@ -6,7 +6,10 @@
     "url": "https://github.com/ctofunds/cicons.git"
   },
   "license": "MIT",
-  "dependencies": {
+  "scripts": {
+    "patch": "npm version patch -m 'v%s'",
+    "minor": "npm version minor -m 'v%s'",
+    "major": "npm version major -m 'v%s'"
   },
   "devDependencies": {
     "gulp": "git://github.com/gulpjs/gulp#4.0",
