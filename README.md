@@ -6,10 +6,10 @@
 
 ### 安装
 
-1. `bower install git://github.com/ctofunds/cicons.git --save`
+1. `npm install cicons --save`
 
 2. 在页面中引用 cicons.css：
-  `<link href="bower_components/cicons.css" media="all" rel="stylesheet" type="text/css">`
+  `<link href="node_modules/cicons/dist/cicons.css" media="all" rel="stylesheet" type="text/css">`
 
 ### 命名规则
 
