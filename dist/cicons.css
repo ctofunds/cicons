@@ -91,84 +91,87 @@
 .icon-cog:before {
     content: "\EA12";
 }
-.icon-delete-circle:before {
+.icon-ctofunds-logo:before {
     content: "\EA13";
 }
-.icon-delete:before {
+.icon-delete-circle:before {
     content: "\EA14";
 }
-.icon-eye:before {
+.icon-delete:before {
     content: "\EA15";
 }
-.icon-fire:before {
+.icon-eye:before {
     content: "\EA16";
 }
-.icon-flag:before {
+.icon-fire:before {
     content: "\EA17";
 }
-.icon-heart:before {
+.icon-flag:before {
     content: "\EA18";
 }
-.icon-image:before {
+.icon-heart:before {
     content: "\EA19";
 }
-.icon-info:before {
+.icon-image:before {
     content: "\EA1A";
 }
-.icon-lightning:before {
+.icon-info:before {
     content: "\EA1B";
 }
-.icon-location:before {
+.icon-lightning:before {
     content: "\EA1C";
 }
-.icon-loop:before {
+.icon-location:before {
     content: "\EA1D";
 }
-.icon-minus-circle:before {
+.icon-loop:before {
     content: "\EA1E";
 }
-.icon-minus:before {
+.icon-minus-circle:before {
     content: "\EA1F";
 }
-.icon-phone:before {
+.icon-minus:before {
     content: "\EA20";
 }
-.icon-plus-circle:before {
+.icon-phone:before {
     content: "\EA21";
 }
-.icon-post:before {
+.icon-plus-circle:before {
     content: "\EA22";
 }
-.icon-safety-warn:before {
+.icon-post:before {
     content: "\EA23";
 }
-.icon-safety:before {
+.icon-safety-warn:before {
     content: "\EA24";
 }
-.icon-search:before {
+.icon-safety:before {
     content: "\EA25";
 }
-.icon-share:before {
+.icon-search:before {
     content: "\EA26";
 }
-.icon-star:before {
+.icon-share:before {
     content: "\EA27";
 }
-.icon-tag:before {
+.icon-star:before {
     content: "\EA28";
 }
-.icon-triangle-down:before {
+.icon-tag:before {
     content: "\EA29";
 }
-.icon-user:before {
+.icon-triangle-down:before {
     content: "\EA2A";
 }
-.icon-users:before {
+.icon-user:before {
     content: "\EA2B";
 }
-.icon-weibo:before {
+.icon-users:before {
     content: "\EA2C";
 }
-.icon-windows:before {
+.icon-weibo:before {
     content: "\EA2D";
+}
+.icon-windows:before {
+    content: "\EA2E";
 }
