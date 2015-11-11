@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: "cicons";
-    src: url('fonts/cicons-001.eot');
-    src: url('fonts/cicons-001.eot?#iefix') format('embedded-opentype'),
-    url('fonts/cicons-001.woff') format('woff'),
-    url('fonts/cicons-001.ttf') format('truetype'),
-    url('fonts/cicons-001.svg#cicons') format('svg');
+    src: url('fonts/cicons-010.eot');
+    src: url('fonts/cicons-010.eot?#iefix') format('embedded-opentype'),
+    url('fonts/cicons-010.woff') format('woff'),
+    url('fonts/cicons-010.ttf') format('truetype'),
+    url('fonts/cicons-010.svg#cicons') format('svg');
     font-weight: normal;
     font-style: normal;
 }
