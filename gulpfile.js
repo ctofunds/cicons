@@ -4,10 +4,10 @@ var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
 var clean = require('gulp-clean')
 
-var version = require('./package.json').version.replace(/\./g, '')
+var version = (new Date).getTime().toString().substr(5)
 var fontName = "cicons";
 
-var fontPath = "fonts/";
+var fontPath = "./dist/fonts/";
 var cssDest = "./dist/";
 
 var style = "cicons.css";
@@ -53,6 +53,6 @@ function generateFonts(cb) {
 }
 
 
-gulp.task('build', gulp.series(generateFonts));
+gulp.task('build', gulp.series(cleanFonts, generateFonts));
 
 gulp.task('default', gulp.series('build'));
