@@ -18,10 +18,14 @@
 * 命名采用英文
 * 全部小写
 * 使用中划线连字符
+* 相关联的图标应统一前缀
 
 ### 怎样更新图标
 
 1. 在 `source` 或 `source` 目录下更新图标源文件（svg 格式）
-2. 执行 `gulp build` 命令生成图标和对应样式表
-3. 执行 `npm run minor`  生成子版本标签
-4. 执行  `git push --tags`  推送到远端
+1. 执行 `gulp build` 命令生成图标和对应样式表
+
+#### 发布流程
+
+1. 执行 `npm run patch` 或 `npm run minor` 或 `npm run major` 生成版本标签
+1. 执行 `git push && git push --tags` 推送到远端
