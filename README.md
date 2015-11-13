@@ -22,4 +22,6 @@
 ### 怎样更新图标
 
 1. 在 `source` 或 `source` 目录下更新图标源文件（svg 格式）
-1. 执行 `gulp build` 命令生成图标和对应样式表
+2. 执行 `gulp build` 命令生成图标和对应样式表
+3. 执行 `npm run minor`  生成子版本标签
+4. 执行  `git push --tags`  推送到远端
