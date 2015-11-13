@@ -7,14 +7,14 @@ var clean = require('gulp-clean')
 var version = (new Date).getTime().toString().substr(5)
 var fontName = "cicons";
 
-var fontPath = "./dist/fonts/";
+var fontPath = "fonts/";
 var cssDest = "./dist/";
 
 var style = "cicons.css";
 var reference = "icons-reference.html";
 
 function cleanFonts(cb) {
-  gulp.src(fontPath).pipe(clean()).on('finish', cb)
+  gulp.src(cssDest + fontPath).pipe(clean()).on('finish', cb)
 }
 
 function generateFonts(cb) {
