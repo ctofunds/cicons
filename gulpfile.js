@@ -1,12 +1,15 @@
 var gulp = require('gulp');
+var crypto = require('crypto');
 var iconfont = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 var rename = require('gulp-rename');
 var clean = require('gulp-clean')
 
-var version = (new Date).getTime().toString().substr(5)
-var fontName = "cicons";
+var version = require('./package.json').version
+var versionHash = crypto.createHash('sha256').update(version).digest('hex')
+var vHash = versionHash.substr(-8)
 
+var fontName = "cicons";
 var fontPath = "fonts/";
 var cssDest = "./dist/";
 
@@ -30,7 +33,7 @@ function generateFonts(cb) {
           glyphs: glyphs,
           fontName: fontName,
           fontPath: fontPath,
-          version: version
+          version: vHash
         }))
         .pipe(rename(style))
         .pipe(gulp.dest(cssDest));
@@ -46,13 +49,15 @@ function generateFonts(cb) {
         .pipe(gulp.dest(cssDest));
     })
     .pipe(rename(function(path) {
-      path.basename += '-' + version
+      path.basename += '-' + vHash
     }))
     .pipe(gulp.dest('./dist/fonts/'))
     .on('finish',cb);
 }
 
+gulp.task('clean', cleanFonts)
+gulp.task('build', generateFonts)
 
-gulp.task('build', gulp.series(cleanFonts, generateFonts));
+gulp.task('clean-build', gulp.series(cleanFonts, generateFonts));
 
-gulp.task('default', gulp.series('build'));
+gulp.task('default', gulp.series('clean-build'));
