@@ -18,7 +18,7 @@ var stylesheetName = "cicons.css";
 var reference = "icons-reference.html";
 
 function cleanFonts(cb) {
-  gulp.src(cssDest + fontPath).pipe(clean()).on('finish', cb)
+  gulp.src(cssDest + '**/*').pipe(clean()).on('finish', cb)
 }
 
 function generateFonts(cb) {
@@ -58,7 +58,7 @@ function generateFonts(cb) {
             return glyph
           })
         }))
-        .pipe(rename('base64.json'))
+        .pipe(rename('base64.js'))
         .pipe(gulp.dest(cssDest))
     })
     .pipe(rename(function(path) {
@@ -88,7 +88,7 @@ gulp.task('png', function () {
         mime: 'image/png',
         glyphs: pngPaths
       })
-      fs.writeFile(cssDest + 'base64_png.json', result)
+      fs.writeFile(cssDest + 'base64_png.js', result)
       cb()
     }))
     // .pipe(gulp.dest(cssDest + 'pngs'))
@@ -99,4 +99,4 @@ gulp.task('build', generateFonts)
 
 gulp.task('clean-build', gulp.series(cleanFonts, generateFonts));
 
-gulp.task('default', gulp.series('clean-build'));
+gulp.task('default', gulp.series('clean-build', 'png'));
