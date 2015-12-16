@@ -5,6 +5,7 @@
     "type": "git",
     "url": "https://github.com/ctofunds/cicons.git"
   },
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "patch": "npm version patch -m 'v%s'",
