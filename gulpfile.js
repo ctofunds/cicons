@@ -51,6 +51,7 @@ function generateFonts(cb) {
 
       gulp.src('template/base64.json.mustache')
         .pipe(consolidate('mustache', {
+          mime: 'image/svg+xml',
           glyphs: glyphs.map(function (glyph) {
             var filepath = 'svg-source/' + glyph.name + '.svg';
             glyph.base64 = fs.readFileSync(filepath).toString('base64');
@@ -67,11 +68,30 @@ function generateFonts(cb) {
     .on('finish',cb);
 }
 
-gulp.task('base64', function () {
-  return gulp.src('template/svg2base64.json.tmpl')
-    .pipe(consolidate('lodash', {test: 123}))
-    .pipe(rename('base64.json'))
-    .pipe(gulp.dest(cssDest))
+var through = require('through2')
+var debug = require('gulp-debug')
+var path = require('path')
+var mustache = require('mustache')
+gulp.task('png', function () {
+  var pngPaths = []
+  var jsonTmpl = fs.readFileSync('template/base64.json.mustache', 'utf8')
+  return gulp.src('png-source/*.png')
+    // insert png filenames to css
+    .pipe(through.obj(function (file, encoding, callback){
+      pngPaths.push({
+        name: file.path.match(/([^/]+)\.png$/)[1],
+        base64: file._contents.toString('base64')
+      })
+      callback(null, file)
+    }, function (cb) {
+      var result = mustache.render(jsonTmpl, {
+        mime: 'image/png',
+        glyphs: pngPaths
+      })
+      fs.writeFile(cssDest + 'base64_png.json', result)
+      cb()
+    }))
+    // .pipe(gulp.dest(cssDest + 'pngs'))
 })
 
 gulp.task('clean', cleanFonts)
